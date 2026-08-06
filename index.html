@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu blog</title>
+    <title>Meu Blog sobre Futebol e Copa do Mundo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="cabecalho">
-        <h1 class="cabecalho-titulo">NEYMAR JR</h1>
-        <p class="cabecalho-paragrafo">A ULTIMA DANÇA</p>
+        <h1 class="cabecalho-titulo">Meu Blog de Futebol</h1>
+        <p class="cabecalho-paragrafo">
+            Espaço para compartilhar ideias e curiosidades sobre a Copa do Mundo
+        </p>
     </header>
 
     <main class="principal">
-        <h3 class="imagem-principal">Postado por Luiz Otávio</h3>
-        
-        <img src="neymar.png" alt="imagem sobre o neymar na copa">
-        
-        <h2 class="principal-titulo-post">Meu primeiro post</h2>
-        
-        <p class="principal-autor">Por: Luiz Otávio</p>
-        
-        <p class="principal-paragrafo-post">
-            Boas vindas ao meu blog! Aqui vou compartilhar dicas sobre a ultima dança de Neymar JR...
-        </p>
-        
-        <button>🇧🇷 <span>0</span></button>
-        <button>⚽ <span>0</span></button>
+
+        <!-- PRIMEIRO POST -->
+        <article class="post">
+            <h2 class="principal-titulo-post">NEYMAR JR: A Última Dança</h2>
+            <p class="principal-autor">Postado por Luiz Otávio</p>
+            <img src="neymar.png" alt="Imagem sobre o Neymar na Copa" class="principal-imagem">
+            <p class="principal-paragrafo-post">
+                Boas-vindas ao meu blog! Aqui vou compartilhar dicas sobre a última dança de Neymar JR...
+            </p>
+            <div class="botoes-reacao">
+                <button onclick="reagir(this)">🇧🇷 <span>0</span></button>
+                <button onclick="reagir(this)">⚽ <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- SEGUNDO POST -->
+        <article class="post">
+            <h2 class="principal-titulo-post">De onde surgiu a Copa do Mundo?</h2>
+            <p class="principal-autor">Postado por Luiz Otávio</p>
+            <img src="copa.png" alt="Imagem sobre a Copa" class="principal-imagem">
+            <p class="principal-paragrafo-post">
+                Boas-vindas ao meu blog! Você sabia que a Copa do Mundo surgiu para melhorar a integração entre os países?
+            </p>
+            <div class="botoes-reacao">
+                <button onclick="reagir(this)">❤️ <span>0</span></button>
+                <button onclick="reagir(this)">👍 <span>0</span></button>
+            </div>
+        </article>
+
     </main>
+
+    <!-- SCRIPT PARA FAZER OS BOTÕES FUNCIONAREM -->
+    <script>
+        function reagir(botao) {
+            // Encontra o elemento <span> dentro do botão clicado
+            const spanContador = botao.querySelector('span');
+            
+            // Pega o valor atual, transforma em número e soma 1
+            let contadorAtual = parseInt(spanContador.textContent);
+            spanContador.textContent = contadorAtual + 1;
+        }
+    </script>
 
 </body>
 </html>
